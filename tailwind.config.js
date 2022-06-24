@@ -2,6 +2,11 @@
 module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
+    screens: {
+      sm: '360px',
+      md: '1024px',
+      lg: '1280px'
+    },
     extend: {
       fontFamily: {
         sans: 'Roboto, sans-serif'

@@ -68,7 +68,6 @@ export function VideoLayer(props: VideoProps) {
     )
   }
 
-
   return (
     <div className='flex-1'>
       <div className='bg-black flex justify-center'>
@@ -80,21 +79,23 @@ export function VideoLayer(props: VideoProps) {
         </div>
       </div>
 
-      <div className='p-8 max-w-[1100px] mx-auto'>
-        <div className='flex items-start gap-16'>
+      <div className='md:p-8 max-w-[1100px] mx-auto sm:p-6'>
+        <div className='flex md:items-start md:gap-16 md:flex-row sm:flex-col sm:gap-6'>
           <div className='flex-1'>
-            <h1 className='text-2xl font-bold'>{data.lesson.title}</h1>
-            <p className='mt-4 text-base text-gray-200 leading-relaxed'>
+            <h1 className='md:text-2xl font-bold sm:text-lg'>
+              {data.lesson.title}
+            </h1>
+            <p className='mt-4 text-base text-gray-200 leading-relaxed sm:text-sm'>
               {data.lesson.description}
             </p>
-            <div className='mt-6 flex items-center gap-4'>
+            <div className='mt-6 flex md:items-center gap-4 sm:items-start'>
               <img
                 className='h-16 w-16 rounded-full border-2 border-blue-500'
                 src={data.lesson.teacher.avatarURL}
                 alt=''
               />
               <div className='leading-relaxed'>
-                <strong className='text-2xl font-bold block'>
+                <strong className='md:text-2xl font-bold block sm:text-lg'>
                   {data.lesson.teacher.name}
                 </strong>
                 <span className='text-sm text-gray-200 block'>
@@ -107,7 +108,7 @@ export function VideoLayer(props: VideoProps) {
           <div className='flex flex-col gap-4'>
             <a
               href='#'
-              className='text-sm font-bold uppercase p-4 bg-green-500 rounded flex items-center justify-center gap-2 hover:bg-green-700 transition-colors'>
+              className='text-sm font-bold uppercase p-4 bg-green-500 rounded flex items-center justify-center gap-2 hover:bg-green-700 transition-colors sm:px-12'>
               <DiscordLogo size={24} />
               Comunidade no discord
             </a>
@@ -120,16 +121,18 @@ export function VideoLayer(props: VideoProps) {
           </div>
         </div>
 
-        <div className='gap-8 mt-20 grid grid-cols-2'>
+        <div className='md:gap-8 md:mt-20 md:grid md:grid-cols-2 sm:flex sm:flex-col sm:mt-16 sm:gap-4'>
           <a
-            className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors'
+            className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors sm:gap-4'
             href='#'>
-            <div className='bg-green-700 py-12 px-6 '>
+            <div className='bg-green-700 py-12 px-6'>
               <FileArrowDown size={40} />
             </div>
-            <div className='leading-relaxed py-6'>
-              <strong className='text-2xl'>Material Complementar</strong>
-              <p className='text-sm text-gray-200 mt-2'>
+            <div className='md:leading-relaxed py-6 sm:py-4 sm:leading-7'>
+              <strong className='md:text-2xl sm:text-lg'>
+                Material Complementar
+              </strong>
+              <p className='md:text-sm text-gray-200 md:mt-2 sm:text-xs sm:mt-1 sm:leading-5'>
                 Acesse o material complementar para acelerar o seu
                 desenvolvimento
               </p>
@@ -144,9 +147,9 @@ export function VideoLayer(props: VideoProps) {
             <div className='bg-green-700 py-12 px-6 '>
               <Image size={40} />
             </div>
-            <div className='leading-relaxed py-6'>
-              <strong className='text-2xl'>Exclusive Wallpapers</strong>
-              <p className='text-sm text-gray-200 mt-2'>
+            <div className='md:leading-relaxed py-6 sm:py-4 sm:leading-7'>
+              <strong className='text-2xl sm:text-lg'>Exclusive Wallpapers</strong>
+              <p className='md:text-sm text-gray-200 md:mt-2 sm:text-xs sm:mt-1 sm:leading-5'>
                 Download our exclusive wallpapers and customize your desktop
               </p>
             </div>
