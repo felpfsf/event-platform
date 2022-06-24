@@ -68,7 +68,6 @@ export function VideoLayer(props: VideoProps) {
     )
   }
 
-  console.log(data)
 
   return (
     <div className='flex-1'>
