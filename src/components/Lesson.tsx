@@ -2,7 +2,10 @@ import { CheckCircle, Lock } from 'phosphor-react'
 // npm i date-fns
 import { isPast, format } from 'date-fns'
 // import ptBR from 'date-fns/locale/pt-BR'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+// CSS
+// npm i classnames
+import classNames from 'classnames'
 
 interface LessonProp {
   title: string
@@ -12,6 +15,7 @@ interface LessonProp {
 }
 
 export function Lesson(props: LessonProp) {
+  const { slug } = useParams<{ slug: string }>()
   // lib date-fns: isPast() verifica se a data já passou da data corrente, deixando o conteúdo mais dinâmico
   const isLessonAvaliable = isPast(props.avaliableAt)
   // const avaliableDateFormatted = format(
@@ -21,6 +25,10 @@ export function Lesson(props: LessonProp) {
   //     locale: ptBR
   //   }
   // )
+
+  const isActiveLesson = slug === props.slug
+
+  // Optei por deixar os valores no padrão Mês, Dia e Ano
   const avaliableDateFormatted = format(
     props.avaliableAt,
     "EEEE' • ' MMMM d' • 'k'h'"
@@ -29,10 +37,28 @@ export function Lesson(props: LessonProp) {
     <Link to={`/event/lesson/${props.slug}`} className='group'>
       <span className='text-gray-300'>{avaliableDateFormatted}</span>
 
-      <div className='rounded border border-gray-500 p-4 mt-2 group-hover:bordergree500'>
+      {/* <div
+        className={`rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500
+        ${isActiveLesson ? 'bg-green-500' : ''}`}></div> */}
+
+      {/* Método com classnames */}
+      <div
+        className={classNames(
+          'rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500',
+          {
+            'bg-green-500': isActiveLesson
+          }
+        )}>
         <header className='flex items-center justify-between mb-4'>
           {isLessonAvaliable ? (
-            <span className='text-sm text-blue-500 font-medium flex items-center gap-2'>
+            <span
+              className={classNames(
+                'text-sm text-blue-500 font-medium flex items-center gap-2',
+                {
+                  'text-white': isActiveLesson,
+                  'text-blue-500': !isActiveLesson
+                }
+              )}>
               <CheckCircle size={20} />
               Cleared Content
             </span>
@@ -42,11 +68,24 @@ export function Lesson(props: LessonProp) {
               Soon
             </span>
           )}
-          <span className='text-xs font-bold rounded py-[0.125rem] px-2 text-white border border-green-300'>
+          <span
+            className={classNames(
+              'text-xs font-bold rounded py-[0.125rem] px-2 text-white border',
+              {
+                'border-white': isActiveLesson,
+                'border-green-300': !isActiveLesson
+              }
+            )}>
             {props.type === 'live' ? 'LIVE' : 'CLASS'}
           </span>
         </header>
-        <strong className='text-gray-200 block mt-5'>{props.title}</strong>
+        <strong
+          className={classNames('block mt-5', {
+            'text-white': isActiveLesson,
+            'text-gray-200': !isActiveLesson
+          })}>
+          {props.title}
+        </strong>
       </div>
     </Link>
   )
