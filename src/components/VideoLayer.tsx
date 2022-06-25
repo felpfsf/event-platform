@@ -12,6 +12,7 @@ import {
 import '@vime/core/themes/default.css'
 import { gql, useQuery } from '@apollo/client'
 import { useGetLessonBySlugQuery } from '../generated'
+import { Footer } from './Footer'
 
 // const GET_LESSON_BY_SLUG_QUERY = gql`
 //   query GetLessonBySlug($slug: String) {
@@ -171,6 +172,7 @@ export function VideoLayer(props: VideoProps) {
           </a>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }

@@ -10,3 +10,14 @@ body {
 .title {
   @apply text-5xl font-bold text-violet-500;
 }
+
+.linkActive {
+  position: relative;
+}
+
+.linkActive::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 8px);
+  @apply h-4 w-4 bg-green-500 z-50 left-[-8px] rotate-45;
+}
