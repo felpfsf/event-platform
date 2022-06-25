@@ -1,4 +1,3 @@
-import { HourglassLow, Play } from 'phosphor-react'
 import { ReactIcon } from '../components/ReactIcon'
 
 export function Loading() {
@@ -10,7 +9,7 @@ export function Loading() {
         </span>
         <div className='flex flex-col items-center justify-center'>
           <h1>Welcome to Ignit'n Minds</h1>
-          <p>We're going to develop a full application</p>
+          <p>We're going to develop a full application on React JS</p>
         </div>
       </div>
     </div>

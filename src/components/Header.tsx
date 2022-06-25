@@ -24,6 +24,9 @@ export function Header() {
               className='text-blue-500 cursor-pointer'
               onClick={() => setIsOpen(!isOpen)}
             />
+            <span>
+              
+            </span>
             <Sidebar />
           </>
         )}
