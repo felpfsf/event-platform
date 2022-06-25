@@ -9,7 +9,7 @@ export function Header() {
   return (
     <header className='w-full py-5 flex items-center lg:justify-center bg-gray-700 border-b border-gray-600 sm:justify-between sm:p-6'>
       <Logo />
-      <span className='flex items-center gap-2 lg:hidden'>
+      {/* <span className='flex items-center gap-2 lg:hidden'>
         <span className='text-sm'>Lessons</span>
         {!isOpen ? (
           <List
@@ -24,13 +24,10 @@ export function Header() {
               className='text-blue-500 cursor-pointer'
               onClick={() => setIsOpen(!isOpen)}
             />
-            <span>
-              
-            </span>
             <Sidebar />
           </>
         )}
-      </span>
+      </span> */}
     </header>
   )
 }
