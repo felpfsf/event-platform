@@ -60,7 +60,7 @@ export function Lesson(props: LessonProp) {
                 }
               )}>
               <CheckCircle size={20} />
-              Cleared Content
+              Avaliable Content
             </span>
           ) : (
             <span className='text-sm text-orange-500 font-medium flex items-center gap-2'>
