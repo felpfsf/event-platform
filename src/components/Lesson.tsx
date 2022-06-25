@@ -46,8 +46,8 @@ export function Lesson(props: LessonProp) {
         className={classNames(
           'rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500',
           {
-            'bg-green-500': isActiveLesson
-          }
+            'bg-green-500 linkActive': isActiveLesson
+          },
         )}>
         <header className='flex items-center justify-between mb-4'>
           {isLessonAvaliable ? (
