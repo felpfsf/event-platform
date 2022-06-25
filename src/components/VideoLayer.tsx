@@ -11,47 +11,54 @@ import {
 
 import '@vime/core/themes/default.css'
 import { gql, useQuery } from '@apollo/client'
+import { useGetLessonBySlugQuery } from '../generated'
 
-const GET_LESSON_BY_SLUG_QUERY = gql`
-  query GetLessonBySlug($slug: String) {
-    lesson(where: { slug: $slug }) {
-      videoId
-      title
-      description
-      teacher {
-        bio
-        avatarURL
-        name
-      }
-    }
-  }
-`
+// const GET_LESSON_BY_SLUG_QUERY = gql`
+//   query GetLessonBySlug($slug: String) {
+//     lesson(where: { slug: $slug }) {
+//       videoId
+//       title
+//       description
+//       teacher {
+//         bio
+//         avatarURL
+//         name
+//       }
+//     }
+//   }
+// `
 
-interface GetLessonBySlugResponse {
-  lesson: {
-    videoId: string
-    title: string
-    description: string
-    teacher: {
-      bio: string
-      avatarURL: string
-      name: string
-    }
-  }
-}
+// interface GetLessonBySlugResponse {
+//   lesson: {
+//     videoId: string
+//     title: string
+//     description: string
+//     teacher: {
+//       bio: string
+//       avatarURL: string
+//       name: string
+//     }
+//   }
+// }
 
 interface VideoProps {
   lessonSlug: string
 }
 
 export function VideoLayer(props: VideoProps) {
-  const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY, {
+  // const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY, {
+  //   variables: {
+  //     slug: props.lessonSlug
+  //   }
+  // })
+
+  const { data } = useGetLessonBySlugQuery({
     variables: {
       slug: props.lessonSlug
     }
   })
 
-  if (!data) {
+  if (!data || !data.lesson) {
     return (
       <div className='flex-1'>
         <div className='flex flex-col items-center justify-center mx-8 my-8 py-64'>
@@ -88,21 +95,24 @@ export function VideoLayer(props: VideoProps) {
             <p className='mt-4 text-base text-gray-200 leading-relaxed sm:text-sm'>
               {data.lesson.description}
             </p>
-            <div className='mt-6 flex md:items-center gap-4 sm:items-start'>
-              <img
-                className='h-16 w-16 rounded-full border-2 border-blue-500'
-                src={data.lesson.teacher.avatarURL}
-                alt=''
-              />
-              <div className='leading-relaxed'>
-                <strong className='md:text-2xl font-bold block sm:text-lg'>
-                  {data.lesson.teacher.name}
-                </strong>
-                <span className='text-sm text-gray-200 block'>
-                  {data.lesson.teacher.bio}
-                </span>
+            
+            {data.lesson.teacher && (
+              <div className='mt-6 flex md:items-center gap-4 sm:items-start'>
+                <img
+                  className='h-16 w-16 rounded-full border-2 border-blue-500'
+                  src={data.lesson.teacher.avatarURL}
+                  alt=''
+                />
+                <div className='leading-relaxed'>
+                  <strong className='md:text-2xl font-bold block sm:text-lg'>
+                    {data.lesson.teacher.name}
+                  </strong>
+                  <span className='text-sm text-gray-200 block'>
+                    {data.lesson.teacher.bio}
+                  </span>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className='flex flex-col gap-4'>
@@ -148,7 +158,9 @@ export function VideoLayer(props: VideoProps) {
               <Image size={40} />
             </div>
             <div className='md:leading-relaxed py-6 sm:py-4 sm:leading-7'>
-              <strong className='text-2xl sm:text-lg'>Exclusive Wallpapers</strong>
+              <strong className='text-2xl sm:text-lg'>
+                Exclusive Wallpapers
+              </strong>
               <p className='md:text-sm text-gray-200 md:mt-2 sm:text-xs sm:mt-1 sm:leading-5'>
                 Download our exclusive wallpapers and customize your desktop
               </p>
