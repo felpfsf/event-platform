@@ -1,14 +1,16 @@
+import igMindsLogo from '../assets/fire-ball-pana-logo.png'
+
 export function Footer() {
   return (
-    <footer className='flex items-center justify-center'>
-      <div className='sm:pb-4 md:pb-2 sm:px-14 md:px-56 border-t border-gray-200 flex sm:flex-col md:flex-row items-center sm:justify-center md:gap-8'>
+    <footer className='flex flex-col items-center justify-between border-t border-gray-200 px-8 py-4 text-xs md:flex-row'>
+      <div className='flex flex-col items-center lg:flex-row'>
         <img
-          src='./src/assets/fire-ball-pana-logo.png'
+          src={igMindsLogo}
           alt=''
           className='w-32'
         />
 
-        <p className='text-sm text-gray-200'>
+        <p className='ml-6 text-gray-200 leading-relaxed'>
           Ignit'n Minds - All rights reserved
         </p>
       </div>

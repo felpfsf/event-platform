@@ -3,6 +3,7 @@ import { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Footer } from '../components/Footer'
 import { Logo } from '../components/Logo'
+import codeMockup from '../assets/code-mockup.png'
 import { useCreateSubscriberMutation } from '../generated'
 
 // const CREATE_SUBSCRIBER_MUTATION = gql`
@@ -81,9 +82,8 @@ export function Subscribe() {
           </form>
         </div>
       </div>
-      <img src='./src/assets/code-mockup.png' className='mt-10' alt='' />
-      <Footer/>
+      <img src={codeMockup} className='mt-10' alt='' />
+      <Footer />
     </div>
-    
   )
 }
