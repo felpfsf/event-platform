@@ -1,4 +1,4 @@
-import { gql, useMutation } from '@apollo/client'
+// import { gql, useMutation } from '@apollo/client'
 import { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Footer } from '../components/Footer'
@@ -81,7 +81,7 @@ export function Subscribe() {
           </form>
         </div>
       </div>
-      <img src='/src/assets/code-mockup.png' className='mt-10' alt='' />
+      <img src='./src/assets/code-mockup.png' className='mt-10' alt='' />
       <Footer/>
     </div>
     
