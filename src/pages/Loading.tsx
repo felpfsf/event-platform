@@ -1,4 +1,3 @@
-import reactjsIcon from '../assets/reactjs-icon.svg'
 import reactLogo from '../assets/react-logo.svg'
 import { Footer } from '../components/Footer'
 
