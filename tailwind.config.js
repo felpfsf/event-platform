@@ -8,6 +8,10 @@ module.exports = {
       lg: '1280px'
     },
     extend: {
+      backgroundImage: {
+        bgBlur: 'url(/src/assets/background-blur-desktop.png)',
+        bgBlurMob: 'url(/src/assets/background-blur-mobile.png)'
+      },
       fontFamily: {
         sans: 'Roboto, sans-serif'
       },
