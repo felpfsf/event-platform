@@ -8,6 +8,9 @@ module.exports = {
       lg: '1280px'
     },
     extend: {
+      animation: {
+        'spin-slow': 'spin 3s linear infinite'
+      },
       backgroundImage: {
         bgBlur: 'url(/src/assets/background-blur-desktop.png)',
         bgBlurMob: 'url(/src/assets/background-blur-mobile.png)'
