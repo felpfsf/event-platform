@@ -2,7 +2,7 @@
 
  <!-- :uk: [English version](/Readme/README-en.md) / [Pt-BR version](../README.md) -->
   
- <!-- ![image]('/../Readme/My-Travel-Journal.png/) -->
+ ![quarta_aula_banner](https://user-images.githubusercontent.com/2619027/175780217-0784daed-db1d-4c42-95b9-7e92cca8ef58.png)
 
   ![GitHub repo size](https://img.shields.io/github/repo-size/felpfsf/event-platform) ![GitHub language count](https://img.shields.io/github/languages/count/felpfsf/event-platform) ![GitHub top language](https://img.shields.io/github/languages/top/felpfsf/event-platform)
 
