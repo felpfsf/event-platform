@@ -14,7 +14,10 @@ const defaultOptions: DefaultOptions = {
 }
 
 export const client = new ApolloClient({
-  uri: 'https://api-sa-east-1.graphcms.com/v2/cl4o8rvvm16l201z7e5l20kbe/master',
+  uri: import.meta.env.VITE_API_URL,
+  headers: {
+    Authorization: `Bearer ${import.meta.env.VITE_API_ACCESS_TOKEN}`
+  },
   //  Por padrão o Apollo armazena o cache dentro da aplicação
   cache: new InMemoryCache(),
   defaultOptions: defaultOptions
