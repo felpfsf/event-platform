@@ -28,6 +28,8 @@ Projeto idealizado na semana do IgniteLab promovido pela Rocketseat
 
 Builded with [Vite](https://vitejs.dev/)
 
+Nature illustrations by Storyset
+
 ## Demonstração
 
 ...
