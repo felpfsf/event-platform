@@ -54,7 +54,7 @@ export function Subscribe() {
 
         <div className='sm:w-full md:w-auto p-8 bg-gray-700 border border-gray-500 md:rounded'>
           <strong className='sm:text-lg md:text-2xl mb-6 block'>
-            Subscribe
+            Free Subscribe
           </strong>
 
           <form onSubmit={handleSubmit} className='w-full flex flex-col gap-2'>
@@ -75,7 +75,7 @@ export function Subscribe() {
             <button
               className='mt-4 py-4 bg-green-500 rounded uppercase font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50'
               type='submit'>
-              Garantir minha vaga
+              Subscribe now!
             </button>
           </form>
         </div>
